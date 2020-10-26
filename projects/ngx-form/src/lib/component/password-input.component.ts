@@ -14,7 +14,7 @@ import {FormGroup} from '@angular/forms';
              class="form-control"
              [attr.placeholder]="placeholder"
              [formControlName]="controlName"
-             (input)="input$()"
+             (input)="input()"
              #password/>
     </div>
     <ng-template [ngIf]="strengthBar && visible">
@@ -36,7 +36,7 @@ export class PasswordInputComponent implements AfterViewInit {
   @Input() req = false;
   @Input() form: FormGroup;
   @Input() strengthBar = true;
-  @Output() inputEvEm: EventEmitter<string> = new EventEmitter<string>();
+  @Output() input$: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('password', {static: true}) el: ElementRef<HTMLInputElement>;
 
   constructor(private renderer: Renderer2) {
@@ -51,8 +51,8 @@ export class PasswordInputComponent implements AfterViewInit {
     }
   }
 
-  input$(): void {
-    this.inputEvEm.emit(this.el.nativeElement.value);
+  input(): void {
+    this.input$.emit(this.el.nativeElement.value);
   }
 
   ngAfterViewInit(): void {
