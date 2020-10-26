@@ -2,6 +2,18 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/ngx-form",
   "lib": {
-    "entryFile": "src/public-api.ts"
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "@ng-bootstrap/ng-bootstrap": "ng-bootstrap-ng-bootstrap",
+      "@ngx-translate/core": "ngx-translate-core",
+      "@vlah.io/ngx-dom-cell": "vlah.io-ngx-dom-cell",
+      "@vlah.io/ngx-helper": "vlah.io-ngx-helper",
+      "@vlah.io/ngx-loading": "vlah.io-ngx-loading",
+      "@vlah.io/ngx-pipe": "vlah.io-ngx-pipe",
+      "@vlah.io/ngx-worker": "vlah.io-ngx-worker",
+      "angular-password-strength-meter": "angular-password-strength-meter",
+      "subsink": "subsink",
+      "zxcvbn3": "zxcvbn3"
+    }
   }
 }

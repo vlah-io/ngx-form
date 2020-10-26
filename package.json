@@ -1,15 +1,33 @@
 {
-  "name": "ngx-form",
-  "version": "0.0.0",
+  "name": "@vlah.io/ngx-form",
+  "version": "3.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --port 5200",
+    "build": "ng build ngx-form --prod",
     "test": "ng test",
+    "test-lib": "ng test ngx-form",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "fix-public-api": "node ./scan.js && git add ./projects/ngx-form/src/public-api.ts",
+    "fix-readme": "cp ./README.md ./projects/ngx-form/README.md && git add ./projects/ngx-form/README.md",
+    "fix-version-patch": "cd projects/ngx-form && npm version patch && cd ../../ && npm run git-add-version",
+    "fix-version-minor": "cd projects/ngx-form && npm version minor && cd ../../ && npm run git-add-version",
+    "fix-version-major": "cd projects/ngx-form && npm version major && cd ../../ && npm run git-add-version",
+    "git-add-version": "git add ./projects/ngx-form/package.json",
+    "git-commit": "git commit -m \"...\"",
+    "git-push": "git push && git push --tags",
+    "prep-release": "npm run fix-public-api && npm run fix-readme",
+    "prep-package": "npm run lint && npm run prep-release && npm run build",
+    "preversion": "npm run lint && npm run prep-release",
+    "version": "",
+    "postversion": "npm run build && npm run publish-release && npm run git-push",
+    "make-patch-release": "npm run fix-version-patch && npm run git-commit && npm version patch",
+    "make-minor-release": "npm run fix-version-minor && npm run git-commit && npm version minor",
+    "make-major-release": "npm run fix-version-major && npm run git-commit && npm version major",
+    "publish-release": "cd dist/ngx-form && npm publish --access=public && cd ../../"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~10.2.0",
     "@angular/common": "~10.2.0",
@@ -19,9 +37,19 @@
     "@angular/platform-browser": "~10.2.0",
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/router": "~10.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^7.0.0",
+    "@ngx-translate/core": "^13.0.0",
+    "@vlah.io/ngx-dom-cell": "^4.0.1",
+    "@vlah.io/ngx-helper": "^4.0.1",
+    "@vlah.io/ngx-loading": "^4.0.1",
+    "@vlah.io/ngx-pipe": "^4.0.1",
+    "@vlah.io/ngx-worker": "^4.0.1",
+    "angular-password-strength-meter": "^3.0.0",
     "rxjs": "~6.6.0",
+    "subsink": "^1.0.1",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "zxcvbn3": "^0.1.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1002.0",
@@ -43,5 +71,21 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
-  }
+  },
+  "description": "Set of reusable Angular form dependencies.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vlah-io/ngx-form.git"
+  },
+  "keywords": [
+    "angular",
+    "angular cli",
+    "angular assets"
+  ],
+  "author": "@vlah.io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vlah-io/ngx-form/issues"
+  },
+  "homepage": "https://github.com/vlah-io/ngx-form#readme"
 }

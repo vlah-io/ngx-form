@@ -1,0 +1,94 @@
+.vlahio-form {
+  /** input like inline elements */
+  /** required */
+  /** suggest dropdown */
+}
+.vlahio-form .vlahio-cs-p {
+  cursor: pointer;
+}
+.vlahio-form label {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vlahio-form label:hover {
+  overflow: visible;
+}
+.vlahio-form .vlahio-form-group {
+  margin-bottom: 1rem;
+}
+.vlahio-form .vlahio-form-group .vlahio-form-control {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  margin: 0;
+}
+.vlahio-form .vlahio-form-group .vlahio-form-control:hover {
+  overflow: visible;
+}
+.vlahio-form .vlahio-form-group .vlahio-form-control.vlahio-readonly {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+.vlahio-form .vlahio-form-group .vlahio-form-control.vlahio-right {
+  text-align: right;
+}
+.vlahio-form .vlahio-form-group label {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.5rem;
+}
+.vlahio-form .vlahio-form-group label:hover {
+  overflow: visible;
+}
+.vlahio-form .vlahio-required:after, .vlahio-form .vlahio-req:after {
+  content: " *";
+  color: #D91E18 !important;
+}
+.vlahio-form .vlahio-dropdown {
+  position: relative;
+}
+.vlahio-form .vlahio-dropdown-content {
+  display: block;
+  position: absolute;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: #fff;
+  width: 100%;
+  z-index: 10071;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 0 !important;
+}
+.vlahio-form .vlahio-dropdown-content ul {
+  list-style: none !important;
+}
+.vlahio-form .vlahio-dropdown-content li {
+  padding: 3px 10px !important;
+}
+.vlahio-form .vlahio-dropdown-content li:hover {
+  background-color: #e8f5e9 !important;
+  cursor: pointer;
+}
+.vlahio-form .form-control.vlahio-dropdown-visible,
+.vlahio-form .input-group > .input-group-append.vlahio-dropdown-visible > .input-group-text {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/*# sourceMappingURL=ngx-form.css.map */

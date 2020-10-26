@@ -1,7 +1,17 @@
-/*
- * Public API Surface of ngx-form
- */
-
-export * from './lib/ngx-form.service';
-export * from './lib/ngx-form.component';
+export * from './lib/abstract/input-abstract.directive';
+export * from './lib/component/date-input.component';
+export * from './lib/component/fake-input.component';
+export * from './lib/component/password-input.component';
+export * from './lib/component/select-box.component';
+export * from './lib/directive/currency-input.directive';
+export * from './lib/directive/numeric-input.directive';
+export * from './lib/directive/percentage-input.directive';
+export * from './lib/directive/select-on-focus.directive';
+export * from './lib/directive/textarea-autosize.directive';
+export * from './lib/directive/wrap-bootstrap.directive';
+export * from './lib/interface/ngx-form.interface';
 export * from './lib/ngx-form.module';
+export * from './lib/service/injection-token';
+export * from './lib/service/NgbDateLocalAdapter';
+export * from './lib/service/NgbDateParserLocalFormatter';
+export * from './lib/worker/form.worker';
